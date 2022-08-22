@@ -1,0 +1,46 @@
+image: tiangolo/docker-with-compose
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - pip install docker-auto-labels
+
+stages:
+  - test
+  - build
+  - deploy
+
+tests:
+  stage: test
+  script:
+    - sh ./scripts/test.sh
+  tags:
+    - dev-unreal
+  when:
+    manual
+
+build-unreal:
+  stage: build
+  script:
+    - TAG=stag FRONTEND_ENV=production sh ./scripts/build-push.sh
+  only:
+    - main
+  tags:
+    - dev-unreal
+
+deploy-unreal:
+  stage: deploy
+  script:
+    - >
+      DOMAIN=159.89.192.6
+      TRAEFIK_TAG=unreal
+      STACK_NAME=dev-unreal
+      TAG=stag
+      sh ./scripts/deploy.sh
+  environment:
+    name: staging
+    url: https://unreal-capital.com
+  only:
+    - main
+  tags:
+    - dev-unreal
+
