@@ -1,0 +1,33 @@
+{
+    "appTitle": "Node Project",
+    "env": "staging",
+    "PORT": 8080,
+    "baseUrl": "http://www.mukilselvam.com",
+    "mongodb": {
+        "host": "mongodb://db/",
+        "uri": "mongodb://db/admin",
+        "uri_test": "mongodb://localhost:27017/un-real",
+        "db_name": "admin",
+        "credentials": {
+            "username": "root",
+            "password": "mongo"
+        },
+        "enableMongoDebugging": false
+    },
+    "aws": {
+        "s3": {
+            "secretAccessKey": "",
+            "accessKeyId": "",
+            "region": "ap-northeast-2",
+            "bucket": "boiler-plate",
+            "identityDocumentsDirectory": "identityDocuments/1000X1000",
+            "profileImageDirectory": "profileImages/1000X1000",
+            "profileImageResizeDirectory": "profileImages/100X100/",
+            "profileImageMediumResizeDirectory": "profileImages/300X300/"
+        }
+    },
+    "hereMapApiKey": "",
+    "JWT_KEY": "SecretKey123@"
+   
+
+}
