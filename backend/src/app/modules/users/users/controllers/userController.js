@@ -5,7 +5,9 @@ import UserProfile from "../models/user-profile.model";
 import jwt from "jsonwebtoken";
 import otpGenerator from "otp-generator";
 import bcrypt from "bcrypt";
-import { sendMail } from "../helpers/mailer";
+import {
+  sendMail
+} from "../helpers/mailer";
 import fs from "fs";
 import * as ejs from "ejs";
 const responseModule = require("../../../../../config/response");
@@ -28,7 +30,7 @@ export const userSignup = async (req, res, next) => {
 
   const user = new User({
     email: req.body.email,
-    otp: otp,
+    otp: 54321,
     password: password,
     role: "User",
   });
@@ -39,10 +41,8 @@ export const userSignup = async (req, res, next) => {
         if (error.name == "ValidationError" || "MongoServerError") {
           return res.status(400).json({
             success: 0,
-            message:
-              error.code === 11000
-                ? "Email already exists, try different email"
-                : error.message,
+            message: error.code === 11000 ?
+              "Email already exists, try different email" : error.message,
             response: 400,
             data: {},
           });
@@ -60,14 +60,18 @@ export const userSignup = async (req, res, next) => {
         bio: req.body.bio || "",
       };
       if (req.file) {
-        var profileImage = '/uploads/'+ req.file.path.substring(req.file.path.lastIndexOf('/')+1);
+        var profileImage = '/uploads/' + req.file.path.substring(req.file.path.lastIndexOf('/') + 1);
         userProfileObj.profileImage = profileImage;
       }
       let profile = await createuserProfile(userProfileObj);
       let isWalletSaved = await createWallet(req, profile);
       if (!isWalletSaved) {
-        await User.find({ _id: result._id }).deleteOne().exec();
-        await UserProfile.find({ _id: profile._id }).deleteOne().exec();
+        await User.find({
+          _id: result._id
+        }).deleteOne().exec();
+        await UserProfile.find({
+          _id: profile._id
+        }).deleteOne().exec();
         return res.status(400).json({
           success: 0,
           message: "Wallet Address already exists",
@@ -78,7 +82,9 @@ export const userSignup = async (req, res, next) => {
       return responseModule.successResponse(res, {
         success: 1,
         message: "User created successfully",
-        data: { _id: result._id },
+        data: {
+          _id: result._id
+        },
       });
     });
   } catch (err) {
@@ -117,17 +123,17 @@ export const loginUser = async (req, res, next) => {
             });
           }
 
-          let userProfile = await UserProfile.findOne({ user: user._id });
+          let userProfile = await UserProfile.findOne({
+            user: user._id
+          });
 
-          const token = jwt.sign(
-            {
+          const token = jwt.sign({
               email: user.email,
               userId: user._id,
               profileId: userProfile._id,
               role: user.role,
             },
-            config.JWT_KEY,
-            {
+            config.JWT_KEY, {
               expiresIn: "7h",
             }
           );
@@ -138,11 +144,15 @@ export const loginUser = async (req, res, next) => {
               specialChars: false,
               lowerCaseAlphabets: false,
             });
-            await User.findOneAndUpdate(
-              { _id: user._id, },
-              { $set: { verificationOtp: otp }, },
-              { new: true, }
-            )
+            await User.findOneAndUpdate({
+              _id: user._id,
+            }, {
+              $set: {
+                verificationOtp: otp
+              },
+            }, {
+              new: true,
+            })
             await send2StepVerificationMail(
               userProfile.userName,
               user.email,
@@ -192,24 +202,20 @@ export const updateUser = async (req, res, next) => {
       status: req.body.status,
     };
     if (req.file) {
-      var profileImage = '/uploads/'+ req.file.path.substring(req.file.path.lastIndexOf('/')+1);
+      var profileImage = '/uploads/' + req.file.path.substring(req.file.path.lastIndexOf('/') + 1);
       updates.profileImage = profileImage;
     }
 
     if (req.body.password) {
       updates.password = bcrypt.hashSync(req.body.password, 10);
     }
-    const user = await User.findOneAndUpdate(
-      {
-        _id: req.params.Id,
-      },
-      {
-        $set: updates,
-      },
-      {
-        new: true,
-      }
-    ).exec((error, response) => {
+    const user = await User.findOneAndUpdate({
+      _id: req.params.Id,
+    }, {
+      $set: updates,
+    }, {
+      new: true,
+    }).exec((error, response) => {
       if (error) {
         if (error.name == "ValidationError" || "MongoServerError") {
           return res.status(400).json({
@@ -243,17 +249,13 @@ export const updateSocialLink = async (req, res, next) => {
       socialTwitterUrl: req.body.socialTwitterUrl,
     };
 
-    const user = await UserProfile.findOneAndUpdate(
-      {
-        _id: req.userData.profileId,
-      },
-      {
-        $set: updates,
-      },
-      {
-        new: true,
-      }
-    ).exec((error, response) => {
+    const user = await UserProfile.findOneAndUpdate({
+      _id: req.userData.profileId,
+    }, {
+      $set: updates,
+    }, {
+      new: true,
+    }).exec((error, response) => {
       if (error) {
         if (error.name == "ValidationError" || "MongoServerError") {
           return res.status(400).json({
@@ -295,17 +297,13 @@ export const emailVerification = async (req, res, next) => {
       const updates = {
         status: true,
       };
-      await User.findOneAndUpdate(
-        {
-          _id: id,
-        },
-        {
-          $set: updates,
-        },
-        {
-          new: true,
-        }
-      ).exec((error, response) => {
+      await User.findOneAndUpdate({
+        _id: id,
+      }, {
+        $set: updates,
+      }, {
+        new: true,
+      }).exec((error, response) => {
         if (error) {
           if (error.name == "ValidationError" || "MongoServerError") {
             return res.status(400).json({
@@ -356,20 +354,18 @@ export const passwordReset = async (req, res, next) => {
     const updates = {
       otp: otp,
     };
-    const user = await User.findOne({ _id: req.params.Id }).exec();
+    const user = await User.findOne({
+      _id: req.params.Id
+    }).exec();
     sendMail(user.email, otp);
 
-    await User.findOneAndUpdate(
-      {
-        _id: req.params.Id,
-      },
-      {
-        $set: updates,
-      },
-      {
-        new: true,
-      }
-    ).exec((error, response) => {
+    await User.findOneAndUpdate({
+      _id: req.params.Id,
+    }, {
+      $set: updates,
+    }, {
+      new: true,
+    }).exec((error, response) => {
       if (error) {
         if (error.name == "ValidationError" || "MongoServerError") {
           return res.status(400).json({
@@ -442,7 +438,7 @@ export const sendWelcomeMail = async (userName, email, otp) => {
 
     let subject = "Your account created successfully";
     let send = await sendMail(email, subject, html);
-  } catch (error) { }
+  } catch (error) {}
 };
 
 export const updateProfile = async (req, res) => {
@@ -456,31 +452,25 @@ export const updateProfile = async (req, res) => {
       //   mobile: req.body.mobile,
     };
     if (req.file) {
-      var profileImage = '/uploads/'+ req.file.path.substring(req.file.path.lastIndexOf('/')+1);
+      var profileImage = '/uploads/' + req.file.path.substring(req.file.path.lastIndexOf('/') + 1);
       updates.profileImage = profileImage;
     }
-    const profile = await UserProfile.findOneAndUpdate(
-      {
-        _id: req.userData.profileId,
+    const profile = await UserProfile.findOneAndUpdate({
+      _id: req.userData.profileId,
+    }, {
+      $set: updates,
+    }, {
+      new: true,
+    }).exec();
+    const user = await User.findOneAndUpdate({
+      _id: req.userData.userId,
+    }, {
+      $set: {
+        updates
       },
-      {
-        $set: updates,
-      },
-      {
-        new: true,
-      }
-    ).exec();
-    const user = await User.findOneAndUpdate(
-      {
-        _id: req.userData.userId,
-      },
-      {
-        $set: { updates },
-      },
-      {
-        new: true,
-      }
-    ).exec((error, response) => {
+    }, {
+      new: true,
+    }).exec((error, response) => {
       if (error) {
         if (error.name == "ValidationError" || "MongoServerError") {
           return res.status(400).json({
@@ -508,12 +498,20 @@ export const updateProfile = async (req, res) => {
 
 export const getUserData = async (req, res) => {
   try {
-    let user = await User.findOne({ _id: req.userData.userId }).select(
+    let user = await User.findOne({
+      _id: req.userData.userId
+    }).select(
       "-password"
     );
-    let profile = await UserProfile.findOne({ _id: req.userData.profileId });
-    let walletAddress = await WalletAddress.find({ profile: req.userData.profileId });
-    let tier = await Tier.findOne({ _id: profile.tier });
+    let profile = await UserProfile.findOne({
+      _id: req.userData.profileId
+    });
+    let walletAddress = await WalletAddress.find({
+      profile: req.userData.profileId
+    });
+    let tier = await Tier.findOne({
+      _id: profile.tier
+    });
     let notificationSettings = await NotificationSettings.findOne({
       profile: profile._id,
     });
@@ -524,7 +522,7 @@ export const getUserData = async (req, res) => {
       user,
       profile,
       walletAddress,
-      tier:tier,
+      tier: tier,
       notificationSettings,
     });
   } catch (error) {
@@ -557,17 +555,13 @@ export const resetOldPassword = async (req, res) => {
             let updateData = {
               password: bcrypt.hashSync(req.body.newPassword, 10),
             };
-            const user = await User.findOneAndUpdate(
-              {
-                _id: req.userData.userId,
-              },
-              {
-                $set: updateData,
-              },
-              {
-                new: true,
-              }
-            ).exec((error, response) => {
+            const user = await User.findOneAndUpdate({
+              _id: req.userData.userId,
+            }, {
+              $set: updateData,
+            }, {
+              new: true,
+            }).exec((error, response) => {
               if (response) {
                 return responseModule.successResponse(res, {
                   success: 1,
@@ -610,17 +604,13 @@ export const createORupdateNotificationSettings = async (req, res) => {
       profile: req.userData.profileId,
     }).exec();
     if (find) {
-      const notificationSettings = await NotificationSettings.findOneAndUpdate(
-        {
-          profile: req.userData.profileId,
-        },
-        {
-          $set: data,
-        },
-        {
-          new: true,
-        }
-      ).exec((error, response) => {
+      const notificationSettings = await NotificationSettings.findOneAndUpdate({
+        profile: req.userData.profileId,
+      }, {
+        $set: data,
+      }, {
+        new: true,
+      }).exec((error, response) => {
         console.log("error -1", error);
         if (response) {
           return responseModule.successResponse(res, {
@@ -657,17 +647,15 @@ export const createORupdateNotificationSettings = async (req, res) => {
 
 export const update2StepVerification = async (req, res) => {
   try {
-    const user = await User.findOneAndUpdate(
-      {
-        _id: req.userData.userId,
+    const user = await User.findOneAndUpdate({
+      _id: req.userData.userId,
+    }, {
+      $set: {
+        is2StepVerificationOn: req.body.is2StepVerificationOn
       },
-      {
-        $set: { is2StepVerificationOn: req.body.is2StepVerificationOn },
-      },
-      {
-        new: true,
-      }
-    ).exec((error, response) => {
+    }, {
+      new: true,
+    }).exec((error, response) => {
       if (error) {
         if (error.name == "ValidationError" || "MongoServerError") {
           return res.status(400).json({
@@ -698,30 +686,26 @@ export const update2StepVerification = async (req, res) => {
 };
 export const updateUserStatus = async (req, res) => {
   try {
-     
-    const profile = await UserProfile.findOneAndUpdate(
-      {
-        _id: req.body.profileId,
-      },
-      {
-        $set: { tier: req.body.tierId },
-      },
-      {
-        new: true,
-      }
-    );
 
-    const user = await User.findOneAndUpdate(
-      {
-        _id: req.body.userId,
+    const profile = await UserProfile.findOneAndUpdate({
+      _id: req.body.profileId,
+    }, {
+      $set: {
+        tier: req.body.tierId
       },
-      {
-        $set: { isBlocked: req.body.isBlocked || false },
+    }, {
+      new: true,
+    });
+
+    const user = await User.findOneAndUpdate({
+      _id: req.body.userId,
+    }, {
+      $set: {
+        isBlocked: req.body.isBlocked || false
       },
-      {
-        new: true,
-      }
-    ).exec((error, response) => {
+    }, {
+      new: true,
+    }).exec((error, response) => {
       if (error) {
         if (error.name == "ValidationError" || "MongoServerError") {
           return res.status(400).json({
@@ -765,7 +749,7 @@ export const send2StepVerificationMail = async (userName, email, otp) => {
 
     let subject = "2 Step Verification Code - Unreal";
     let send = await sendMail(email, subject, html);
-  } catch (error) { }
+  } catch (error) {}
 };
 
 export const otpVerification = async (req, res, next) => {
@@ -795,16 +779,18 @@ export const otpVerification = async (req, res, next) => {
 
 export const forgotPassword = async (req, res) => {
   try {
-    let user = await User.findOne({ email: req.body.email })
+    let user = await User.findOne({
+      email: req.body.email
+    })
     if (user) {
-      let userProfile = UserProfile.findOne({ user: user._id })
+      let userProfile = UserProfile.findOne({
+        user: user._id
+      })
 
-      const token = jwt.sign(
-        {
+      const token = jwt.sign({
           userId: user._id,
         },
-        config.JWT_KEY,
-        {
+        config.JWT_KEY, {
           expiresIn: 600,
         }
       );
@@ -822,7 +808,7 @@ export const forgotPassword = async (req, res) => {
       });
 
       let subject = "Reset your password - Unreal";
-     // user.email ="es6developer@gmail.com";
+      // user.email ="es6developer@gmail.com";
       let send = await sendMail(user.email, subject, html);
       return responseModule.successResponse(res, {
         success: 1,
@@ -852,17 +838,13 @@ export const resetNewPassword = async (req, res) => {
     let updateData = {
       password: bcrypt.hashSync(req.body.newPassword, 10),
     };
-    const user = await User.findOneAndUpdate(
-      {
-        _id: decoded.userId,
-      },
-      {
-        $set: updateData,
-      },
-      {
-        new: true,
-      }
-    ).exec((error, response) => {
+    const user = await User.findOneAndUpdate({
+      _id: decoded.userId,
+    }, {
+      $set: updateData,
+    }, {
+      new: true,
+    }).exec((error, response) => {
       if (response) {
         return responseModule.successResponse(res, {
           success: 1,

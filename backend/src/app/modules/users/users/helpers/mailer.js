@@ -2,20 +2,20 @@ import winston from "../../../../../config/winston";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com", // hostname
+  host: "smtp.office365.com", // hostname
   secureConnection: false, // TLS requires secureConnection to be false
   secure: true,
-  port: 465,
+  port: 587,
   auth: {
-    user: "karthik.bca1417@gmail.com",
-    pass: "vmbtdwyyuhndzzte",
+    user: "reach_quantum@outlook.com",
+    pass: "PocoX2123",
   },
 });
 
 export const sendMail = async (toEmail, subject, message) => {
   winston.info("Inside Mail Function");
   var mailOptions = {
-    from: "team_quantum@outlook.com",
+    from: "reach_quantum@outlook.com",
     to: toEmail,
     subject: subject,
     text: message,
@@ -24,6 +24,7 @@ export const sendMail = async (toEmail, subject, message) => {
 
   transporter.sendMail(mailOptions, function (err, info) {
     if (err) {
+      console.log("Hello");
       winston.error(err);
       return;
     }

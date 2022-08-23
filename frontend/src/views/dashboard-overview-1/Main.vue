@@ -7,8 +7,7 @@
     <div class="col-span-12 mt-8">
       <div class="grid grid-cols-12 gap-6 lg:gap-x-8">
         <div class="col-span-12 mb-6 hidden lg:flex">
-                       <Dashboard></Dashboard>
-
+          <Dashboard></Dashboard>
         </div>
         <div class="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
           <div class="report-box report-box__right zoom-in">
@@ -20,11 +19,11 @@
                 </div>
                 <div class="ml-auto p-4 rounded-xl bg__icon-bnb">
                   <!-- <LayersIcon class="report-box__icon text-cyan-600" /> -->
-                  <img
+                  <!-- <img
                     src="@/assets/images/uc/bnb.png"
                     class="w-12 h-12"
                     alt=""
-                  />
+                  /> -->
                 </div>
               </div>
             </div>
@@ -39,11 +38,11 @@
                   <div class="text-base text-slate-500 mt-1">Ethereum</div>
                 </div>
                 <div class="ml-auto p-4 rounded-xl bg__icon-eth">
-                  <img
+                  <!-- <img
                     src="@/assets/images/uc/eth.png"
                     class="w-12 h-12"
                     alt=""
-                  />
+                  /> -->
                 </div>
               </div>
             </div>
@@ -58,11 +57,11 @@
                   <div class="text-base text-slate-500 mt-1">Polygon</div>
                 </div>
                 <div class="ml-auto p-4 rounded-xl bg__icon-polygon">
-                  <img
+                  <!-- <img
                     src="@/assets/images/uc/polygon.png"
                     class="w-12 h-12"
                     alt=""
-                  />
+                  /> -->
                 </div>
               </div>
             </div>
@@ -150,10 +149,26 @@
         <div class="pb-8">
           <!-- BEGIN: SINGLE NETWORK TAB -->
           <div
-            class="flex flex-col lg:flex-row items-center justify-between mb-4 lg:mb-8"
+            class="
+              flex flex-col
+              lg:flex-row
+              items-center
+              justify-between
+              mb-4
+              lg:mb-8
+            "
           >
             <ul
-              class="nav nav-pills w-full lg:w-2/6 bg-slate-200 dark:bg-black/10 rounded-md mr-auto p-1"
+              class="
+                nav nav-pills
+                w-full
+                lg:w-2/6
+                bg-slate-200
+                dark:bg-black/10
+                rounded-md
+                mr-auto
+                p-1
+              "
               role="tablist"
             >
               <li
@@ -246,7 +261,16 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   icon-name="search"
-                  class="lucide lucide-search w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"
+                  class="
+                    lucide lucide-search
+                    w-4
+                    h-4
+                    absolute
+                    my-auto
+                    inset-y-0
+                    mr-3
+                    right-0
+                  "
                   data-lucide="search"
                 >
                   <circle cx="11" cy="11" r="8"></circle>
@@ -311,7 +335,12 @@
                     <td>
                       <a
                         href=""
-                        class="text-lg font-semibold capitalize whitespace-nowrap"
+                        class="
+                          text-lg
+                          font-semibold
+                          capitalize
+                          whitespace-nowrap
+                        "
                         >{{ user.name }}</a
                       >
                       <div class="w-full mb-4 mt-2 lg:mb-0 mr-auto">
@@ -349,7 +378,15 @@
                       <div class="flex justify-center gap-4 items-center">
                         <a
                           @click="contribute(user)"
-                          class="flex items-center text-white text-center bg-primary p-2 px-6 rounded"
+                          class="
+                            flex
+                            items-center
+                            text-white text-center
+                            bg-primary
+                            p-2
+                            px-6
+                            rounded
+                          "
                           >Contribute
                         </a>
                       </div>
@@ -367,7 +404,13 @@
               @hidden="bscOngoingModal = false"
             >
               <div
-                class="flex justify-between items-center px-6 border-b border-slate-200 border-solid border-t-2xl"
+                class="
+                  flex
+                  justify-between
+                  items-center
+                  px-6
+                  border-b border-slate-200 border-solid border-t-2xl
+                "
               >
                 <div class="text-xl font-semibold py-5">Ongoing</div>
                 <a
@@ -384,7 +427,14 @@
                   <div class="intro-y mt-5">
                     <div class="grid grid-cols-12 gap-4">
                       <div
-                        class="col-span-12 md:col-span-8 box h-[35rem] overflow-y-scroll relative"
+                        class="
+                          col-span-12
+                          md:col-span-8
+                          box
+                          h-[35rem]
+                          overflow-y-scroll
+                          relative
+                        "
                       >
                         <div class="intro-y px-5 mt-5">
                           <div class="flex flex-col justify-between mx-auto">
@@ -392,7 +442,14 @@
                               style="
                                 background-image: url(https://app.gains-associates.com/assets/images/baner/BANNER.png);
                               "
-                              class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
+                              class="
+                                bg-gray-300
+                                h-64
+                                w-full
+                                rounded-lg
+                                shadow-md
+                                bg-cover bg-center
+                              "
                             ></div>
                             <div class="flex items-center justify-between">
                               <div
@@ -400,12 +457,24 @@
                               >
                                 <img
                                   alt="unreal-capital"
-                                  class="rounded-md w-40 h-40 shadow-xl object-cover"
+                                  class="
+                                    rounded-md
+                                    w-40
+                                    h-40
+                                    shadow-xl
+                                    object-cover
+                                  "
                                   src="@/assets/images/uc/gt-protocol.jpg"
                                 />
                               </div>
                               <div
-                                class="flex flex-wrap items-center gap-4 my-8 float-right"
+                                class="
+                                  flex flex-wrap
+                                  items-center
+                                  gap-4
+                                  my-8
+                                  float-right
+                                "
                               >
                                 <button
                                   class="btn btn-facebook p-3 rounded-full"
@@ -433,18 +502,42 @@
                           <div class="grid grid-cols-12">
                             <div class="col-span-12">
                               <div
-                                class="flex items-center border-b border-slate-200/60 dark:border-darkmode-400 p-5"
+                                class="
+                                  flex
+                                  items-center
+                                  border-b border-slate-200/60
+                                  dark:border-darkmode-400
+                                  p-5
+                                "
                               >
                                 <div>
                                   <h2 class="font-semibold text-xl pt-6">
                                     Name - {{ this.currentModalName }}
                                     <span
-                                      class="p-2 px-4 font-semibold text-sm btn-secondary rounded text-slate-500 ml-2"
+                                      class="
+                                        p-2
+                                        px-4
+                                        font-semibold
+                                        text-sm
+                                        btn-secondary
+                                        rounded
+                                        text-slate-500
+                                        ml-2
+                                      "
                                       >SymBol -
                                       {{ this.currentModalSymbol }}</span
                                     >
                                     <span
-                                      class="p-2 px-4 font-semibold text-sm btn-secondary rounded text-slate-500 ml-2"
+                                      class="
+                                        p-2
+                                        px-4
+                                        font-semibold
+                                        text-sm
+                                        btn-secondary
+                                        rounded
+                                        text-slate-500
+                                        ml-2
+                                      "
                                       >Project Id -
                                       {{ this.currentModalId }}</span
                                     >
@@ -464,7 +557,19 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link cursor-pointer flex items-center justify-center text-sm lg:text-base w-full py-5 px-2 active"
+                                class="
+                                  nav-link
+                                  cursor-pointer
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                  active
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#active-network"
                                 type="button"
@@ -482,7 +587,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -499,7 +614,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -561,7 +686,21 @@
                         </div>
 
                         <div
-                          class="flex items-center justify-center bottom-4 right-[28.5rem] border bg-primary animate-bounce rounded-md w-12 h-12 fixed scroll-to-down"
+                          class="
+                            flex
+                            items-center
+                            justify-center
+                            bottom-4
+                            right-[28.5rem]
+                            border
+                            bg-primary
+                            animate-bounce
+                            rounded-md
+                            w-12
+                            h-12
+                            fixed
+                            scroll-to-down
+                          "
                         >
                           <div class="text-center">
                             <ArrowDownIcon class="text-white" />
@@ -574,7 +713,14 @@
                           @submit.prevent="finalContribute()"
                         >
                           <div
-                            class="p-6 mb-8 shadow-lg rounded-xl w-full bg-[#d1a5651c]"
+                            class="
+                              p-6
+                              mb-8
+                              shadow-lg
+                              rounded-xl
+                              w-full
+                              bg-[#d1a5651c]
+                            "
                           >
                             <p class="text-base pb-1 text-left">Pay</p>
 
@@ -583,7 +729,14 @@
                                 @input="handleInput(currentModalId, $event)"
                                 :value="payload[currentModalId]"
                                 type="number"
-                                class="form-control w-56 rounded-md input--rounded box pr-10"
+                                class="
+                                  form-control
+                                  w-56
+                                  rounded-md
+                                  input--rounded
+                                  box
+                                  pr-10
+                                "
                                 placeholder="Enter Amount..."
                                 :min="1"
                                 required
@@ -597,7 +750,15 @@
                             </p>
                           </div>
                           <div
-                            class="my-6 p-3 rounded-md flex items-center justify-between border-[#d1a565] border border-solid"
+                            class="
+                              my-6
+                              p-3
+                              rounded-md
+                              flex
+                              items-center
+                              justify-between
+                              border-[#d1a565] border border-solid
+                            "
                           >
                             <p class="text-sm text-slate-500 font-bold">
                               Your Balance
@@ -619,7 +780,13 @@
 
                           <div class="mb-6 bg-[#f8f8f8]">
                             <div
-                              class="px-6 py-3 flex justify-between border-b border-[#E7E7E7] border-solid"
+                              class="
+                                px-6
+                                py-3
+                                flex
+                                justify-between
+                                border-b border-[#E7E7E7] border-solid
+                              "
                             >
                               <p class="text-sm">Amount With Fee</p>
                               <div class="flex items-center gap-2">
@@ -787,7 +954,13 @@
               @hidden="bscUpcomingModal = false"
             >
               <div
-                class="flex justify-between items-center px-6 border-b border-slate-200 border-solid border-t-2xl"
+                class="
+                  flex
+                  justify-between
+                  items-center
+                  px-6
+                  border-b border-slate-200 border-solid border-t-2xl
+                "
               >
                 <div class="text-xl font-semibold py-5">Upcoming</div>
                 <a
@@ -804,7 +977,13 @@
                   <div class="intro-y mt-5">
                     <div class="grid grid-cols-12 gap-4">
                       <div
-                        class="col-span-12 box h-[35rem] overflow-y-scroll relative"
+                        class="
+                          col-span-12
+                          box
+                          h-[35rem]
+                          overflow-y-scroll
+                          relative
+                        "
                       >
                         <div class="intro-y px-5 mt-5">
                           <div class="flex flex-col justify-between mx-auto">
@@ -812,7 +991,14 @@
                               style="
                                 background-image: url(https://app.gains-associates.com/assets/images/baner/BANNER.png);
                               "
-                              class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
+                              class="
+                                bg-gray-300
+                                h-64
+                                w-full
+                                rounded-lg
+                                shadow-md
+                                bg-cover bg-center
+                              "
                             ></div>
                             <div class="flex items-center justify-between">
                               <div
@@ -820,12 +1006,24 @@
                               >
                                 <img
                                   alt="unreal-capital"
-                                  class="rounded-md w-40 h-40 shadow-xl object-cover"
+                                  class="
+                                    rounded-md
+                                    w-40
+                                    h-40
+                                    shadow-xl
+                                    object-cover
+                                  "
                                   src="@/assets/images/uc/gt-protocol.jpg"
                                 />
                               </div>
                               <div
-                                class="flex flex-wrap items-center gap-4 my-8 float-right"
+                                class="
+                                  flex flex-wrap
+                                  items-center
+                                  gap-4
+                                  my-8
+                                  float-right
+                                "
                               >
                                 <button
                                   class="btn btn-facebook p-3 rounded-full"
@@ -853,18 +1051,42 @@
                           <div class="grid grid-cols-12">
                             <div class="col-span-12">
                               <div
-                                class="flex items-center border-b border-slate-200/60 dark:border-darkmode-400 p-5"
+                                class="
+                                  flex
+                                  items-center
+                                  border-b border-slate-200/60
+                                  dark:border-darkmode-400
+                                  p-5
+                                "
                               >
                                 <div>
                                   <h2 class="font-semibold text-xl pt-6">
                                     Name - {{ this.currentModalName }}
                                     <span
-                                      class="p-2 px-4 font-semibold text-sm btn-secondary rounded text-slate-500 ml-2"
+                                      class="
+                                        p-2
+                                        px-4
+                                        font-semibold
+                                        text-sm
+                                        btn-secondary
+                                        rounded
+                                        text-slate-500
+                                        ml-2
+                                      "
                                       >SymBol -
                                       {{ this.currentModalSymbol }}</span
                                     >
                                     <span
-                                      class="p-2 px-4 font-semibold text-sm btn-secondary rounded text-slate-500 ml-2"
+                                      class="
+                                        p-2
+                                        px-4
+                                        font-semibold
+                                        text-sm
+                                        btn-secondary
+                                        rounded
+                                        text-slate-500
+                                        ml-2
+                                      "
                                       >Project Id -
                                       {{ this.currentModalId }}</span
                                     >
@@ -884,7 +1106,19 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link cursor-pointer flex items-center justify-center text-sm lg:text-base w-full py-5 px-2 active"
+                                class="
+                                  nav-link
+                                  cursor-pointer
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                  active
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#active-network"
                                 type="button"
@@ -902,7 +1136,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -919,7 +1163,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -982,7 +1236,21 @@
 
                         <!-- <div class="flex items-center justify-center absolute bottom-4 right-4 border bg-primary animate-bounce rounded-md w-12 h-12"> -->
                         <div
-                          class="flex items-center justify-center bottom-4 right-[28.5rem] border bg-primary animate-bounce rounded-md w-12 h-12 fixed scroll-to-down"
+                          class="
+                            flex
+                            items-center
+                            justify-center
+                            bottom-4
+                            right-[28.5rem]
+                            border
+                            bg-primary
+                            animate-bounce
+                            rounded-md
+                            w-12
+                            h-12
+                            fixed
+                            scroll-to-down
+                          "
                         >
                           <div class="text-center">
                             <ArrowDownIcon class="text-white" />
@@ -1083,7 +1351,15 @@
                     </td>
                     <td class="text-center">
                       <span
-                        class="bg-gray-400/20 text-gray-600 text-sm m-2 px-2 py-1 rounded z-10"
+                        class="
+                          bg-gray-400/20
+                          text-gray-600 text-sm
+                          m-2
+                          px-2
+                          py-1
+                          rounded
+                          z-10
+                        "
                         >Sale Ended</span
                       >
                     </td>
@@ -1100,7 +1376,13 @@
               @hidden="bscCompletedModal = false"
             >
               <div
-                class="flex justify-between items-center px-6 border-b border-slate-200 border-solid border-t-2xl"
+                class="
+                  flex
+                  justify-between
+                  items-center
+                  px-6
+                  border-b border-slate-200 border-solid border-t-2xl
+                "
               >
                 <div class="text-xl font-semibold py-5">Completed</div>
                 <a
@@ -1117,7 +1399,13 @@
                   <div class="intro-y mt-5">
                     <div class="grid grid-cols-12 gap-4">
                       <div
-                        class="col-span-12 box h-[35rem] overflow-y-scroll relative"
+                        class="
+                          col-span-12
+                          box
+                          h-[35rem]
+                          overflow-y-scroll
+                          relative
+                        "
                       >
                         <div class="intro-y px-5 mt-5">
                           <div class="flex flex-col justify-between mx-auto">
@@ -1125,7 +1413,14 @@
                               style="
                                 background-image: url(https://app.gains-associates.com/assets/images/baner/BANNER.png);
                               "
-                              class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
+                              class="
+                                bg-gray-300
+                                h-64
+                                w-full
+                                rounded-lg
+                                shadow-md
+                                bg-cover bg-center
+                              "
                             ></div>
                             <div class="flex items-center justify-between">
                               <div
@@ -1133,12 +1428,24 @@
                               >
                                 <img
                                   alt="unreal-capital"
-                                  class="rounded-md w-40 h-40 shadow-xl object-cover"
+                                  class="
+                                    rounded-md
+                                    w-40
+                                    h-40
+                                    shadow-xl
+                                    object-cover
+                                  "
                                   src="@/assets/images/uc/gt-protocol.jpg"
                                 />
                               </div>
                               <div
-                                class="flex flex-wrap items-center gap-4 my-8 float-right"
+                                class="
+                                  flex flex-wrap
+                                  items-center
+                                  gap-4
+                                  my-8
+                                  float-right
+                                "
                               >
                                 <button
                                   class="btn btn-facebook p-3 rounded-full"
@@ -1175,7 +1482,19 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link cursor-pointer flex items-center justify-center text-sm lg:text-base w-full py-5 px-2 active"
+                                class="
+                                  nav-link
+                                  cursor-pointer
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                  active
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#active-network"
                                 type="button"
@@ -1193,7 +1512,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -1210,7 +1539,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -1273,7 +1612,21 @@
 
                         <!-- <div class="flex items-center justify-center absolute bottom-4 right-4 border bg-primary animate-bounce rounded-md w-12 h-12"> -->
                         <div
-                          class="flex items-center justify-center bottom-4 right-12 border bg-primary animate-bounce rounded-md w-12 h-12 fixed scroll-to-down"
+                          class="
+                            flex
+                            items-center
+                            justify-center
+                            bottom-4
+                            right-12
+                            border
+                            bg-primary
+                            animate-bounce
+                            rounded-md
+                            w-12
+                            h-12
+                            fixed
+                            scroll-to-down
+                          "
                         >
                           <div class="text-center">
                             <ArrowDownIcon class="text-white" />
@@ -1386,7 +1739,13 @@
               @hidden="bscMydealsModal = false"
             >
               <div
-                class="flex justify-between items-center px-6 border-b border-slate-200 border-solid border-t-2xl"
+                class="
+                  flex
+                  justify-between
+                  items-center
+                  px-6
+                  border-b border-slate-200 border-solid border-t-2xl
+                "
               >
                 <div class="text-xl font-semibold py-5">My Deals</div>
                 <a
@@ -1403,7 +1762,13 @@
                   <div class="intro-y mt-5">
                     <div class="grid grid-cols-12 gap-4">
                       <div
-                        class="col-span-12 box h-[35rem] overflow-y-scroll relative"
+                        class="
+                          col-span-12
+                          box
+                          h-[35rem]
+                          overflow-y-scroll
+                          relative
+                        "
                       >
                         <div class="intro-y px-5 mt-5">
                           <div class="flex flex-col justify-between mx-auto">
@@ -1411,7 +1776,14 @@
                               style="
                                 background-image: url(https://app.gains-associates.com/assets/images/baner/BANNER.png);
                               "
-                              class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
+                              class="
+                                bg-gray-300
+                                h-64
+                                w-full
+                                rounded-lg
+                                shadow-md
+                                bg-cover bg-center
+                              "
                             ></div>
                             <div class="flex items-center justify-between">
                               <div
@@ -1419,12 +1791,24 @@
                               >
                                 <img
                                   alt="unreal-capital"
-                                  class="rounded-md w-40 h-40 shadow-xl object-cover"
+                                  class="
+                                    rounded-md
+                                    w-40
+                                    h-40
+                                    shadow-xl
+                                    object-cover
+                                  "
                                   src="@/assets/images/uc/gt-protocol.jpg"
                                 />
                               </div>
                               <div
-                                class="flex flex-wrap items-center gap-4 my-8 float-right"
+                                class="
+                                  flex flex-wrap
+                                  items-center
+                                  gap-4
+                                  my-8
+                                  float-right
+                                "
                               >
                                 <button
                                   class="btn btn-facebook p-3 rounded-full"
@@ -1461,7 +1845,19 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link cursor-pointer flex items-center justify-center text-sm lg:text-base w-full py-5 px-2 active"
+                                class="
+                                  nav-link
+                                  cursor-pointer
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                  active
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#active-network"
                                 type="button"
@@ -1479,7 +1875,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -1496,7 +1902,17 @@
                               role="presentation"
                             >
                               <button
-                                class="nav-link flex items-center justify-center text-sm lg:text-base w-full py-5 px-2"
+                                class="
+                                  nav-link
+                                  flex
+                                  items-center
+                                  justify-center
+                                  text-sm
+                                  lg:text-base
+                                  w-full
+                                  py-5
+                                  px-2
+                                "
                                 data-tw-toggle="pill"
                                 data-tw-target="#inactive-network"
                                 type="button"
@@ -1559,7 +1975,21 @@
 
                         <!-- <div class="flex items-center justify-center absolute bottom-4 right-4 border bg-primary animate-bounce rounded-md w-12 h-12"> -->
                         <div
-                          class="flex items-center justify-center bottom-4 right-12 border bg-primary animate-bounce rounded-md w-12 h-12 fixed scroll-to-down"
+                          class="
+                            flex
+                            items-center
+                            justify-center
+                            bottom-4
+                            right-12
+                            border
+                            bg-primary
+                            animate-bounce
+                            rounded-md
+                            w-12
+                            h-12
+                            fixed
+                            scroll-to-down
+                          "
                         >
                           <div class="text-center">
                             <ArrowDownIcon class="text-white" />
@@ -1581,7 +2011,13 @@
               @hidden="bscContributeModal = false"
             >
               <div
-                class="flex justify-between items-center px-6 border-b border-slate-200 border-solid border-t-2xl"
+                class="
+                  flex
+                  justify-between
+                  items-center
+                  px-6
+                  border-b border-slate-200 border-solid border-t-2xl
+                "
               >
                 <div class="text-xl font-semibold py-5">Contribution</div>
                 <a
@@ -1598,14 +2034,31 @@
                   <div class="grid grid-cols-12 gap-4 lg:gap-8">
                     <div class="col-span-12 md:col-span-5">
                       <div
-                        class="p-6 rounded-xl w-full bg-[#d1a5651c] min-h-[9.5rem] flex flex-col justify-between"
+                        class="
+                          p-6
+                          rounded-xl
+                          w-full
+                          bg-[#d1a5651c]
+                          min-h-[9.5rem]
+                          flex flex-col
+                          justify-between
+                        "
                       >
                         <div class="flex justfy-between items-center">
                           <h6 class="font-semibold text-xs md:text-sm w-2/4">
                             ID
                           </h6>
                           <p
-                            class="font-bold text-xs md:text-sm lg:text-lg truncate text-black w-2/4 text-right"
+                            class="
+                              font-bold
+                              text-xs
+                              md:text-sm
+                              lg:text-lg
+                              truncate
+                              text-black
+                              w-2/4
+                              text-right
+                            "
                           >
                             {{ currentModalId }}
                           </p>
@@ -1615,7 +2068,16 @@
                             Name
                           </h6>
                           <p
-                            class="font-bold text-xs md:text-sm lg:text-lg truncate text-black w-2/4 text-right"
+                            class="
+                              font-bold
+                              text-xs
+                              md:text-sm
+                              lg:text-lg
+                              truncate
+                              text-black
+                              w-2/4
+                              text-right
+                            "
                           >
                             {{ currentModalName }}
                           </p>
@@ -1625,7 +2087,16 @@
                             Symbol
                           </h6>
                           <p
-                            class="font-bold text-xs md:text-sm lg:text-lg truncate text-black w-2/4 text-right"
+                            class="
+                              font-bold
+                              text-xs
+                              md:text-sm
+                              lg:text-lg
+                              truncate
+                              text-black
+                              w-2/4
+                              text-right
+                            "
                           >
                             {{ currentModalSymbol }}
                           </p>
@@ -1640,7 +2111,14 @@
                             @input="handleInput(currentModalId, $event)"
                             :value="payload[currentModalId]"
                             type="number"
-                            class="form-control w-56 rounded-md input--rounded box pr-10"
+                            class="
+                              form-control
+                              w-56
+                              rounded-md
+                              input--rounded
+                              box
+                              pr-10
+                            "
                             placeholder="Enter Amount..."
                             :min="1"
                             required
@@ -1655,7 +2133,15 @@
                   </div>
 
                   <div
-                    class="my-6 p-3 rounded-md flex items-center justify-between border-[#d1a565] border border-solid"
+                    class="
+                      my-6
+                      p-3
+                      rounded-md
+                      flex
+                      items-center
+                      justify-between
+                      border-[#d1a565] border border-solid
+                    "
                   >
                     <p class="text-sm text-slate-500 font-bold">Your Balance</p>
                     <p class="text-red-600 font-bold text-sm">
@@ -1675,7 +2161,13 @@
 
                   <div class="mb-6 bg-[#f8f8f8]">
                     <div
-                      class="px-6 py-3 flex justify-between border-b border-[#E7E7E7] border-solid"
+                      class="
+                        px-6
+                        py-3
+                        flex
+                        justify-between
+                        border-b border-[#E7E7E7] border-solid
+                      "
                     >
                       <p class="text-sm">Amount With Fee</p>
                       <div class="flex items-center gap-2">
@@ -1753,7 +2245,24 @@
         <div class="text-slate-500 mt-2">
           <button
             type="button"
-            class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-indigo-500 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed"
+            class="
+              inline-flex
+              items-center
+              px-4
+              py-2
+              font-semibold
+              leading-6
+              text-sm
+              shadow
+              rounded-md
+              text-white
+              bg-indigo-500
+              hover:bg-indigo-400
+              transition
+              ease-in-out
+              duration-150
+              cursor-not-allowed
+            "
             disabled=""
           >
             <svg
@@ -1808,7 +2317,12 @@
         </button>
       </div>
       <div
-        class="p-5 text-center border-t border-slate-200/60 dark:border-darkmode-400"
+        class="
+          p-5
+          text-center
+          border-t border-slate-200/60
+          dark:border-darkmode-400
+        "
       >
         <a href="" class="text-primary">Why do I have this issue?</a>
       </div>
@@ -1830,7 +2344,7 @@ import {
   BSCcontract,
 } from "@/helpers/helper.js";
 import VerticalBarChart from "@/components/vertical-bar-chart/Main.vue";
-import Dashboard from '../../crypto-dashboard/views/Dashboard.vue'
+import Dashboard from "../../crypto-dashboard/views/Dashboard.vue";
 
 const largeModalSizePreview = ref(false);
 const warningModalPreview = ref(false);
@@ -1845,7 +2359,7 @@ export default {
   contractResult: "",
   components: {
     VerticalBarChart,
-    Dashboard
+    Dashboard,
   },
   data() {
     return {
@@ -1883,7 +2397,7 @@ export default {
       processingStatus: "",
       currentModalMinimumAmount: 0,
       currentModalSource: "",
-      searchText:""
+      searchText: "",
     };
   },
 
@@ -2125,9 +2639,9 @@ export default {
         this.createContribution(contribute);
       }
     },
-    async searchPools(){
-         await this.fetchDeals(this.searchText);
-    }
+    async searchPools() {
+      await this.fetchDeals(this.searchText);
+    },
   },
 };
 

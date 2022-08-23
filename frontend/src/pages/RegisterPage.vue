@@ -6,17 +6,25 @@
         <!-- BEGIN: Login Info -->
         <div class="hidden xl:flex flex-col min-h-screen">
           <a href="" class="-intro-x flex items-center pt-5">
-            <img
+            <!-- <img
               alt="unreal-capital"
               style="margin-left: 4rem"
               class="w-64 h-full"
               src="@/assets/images/uc/uc-light.png"
-            />
+            /> -->
           </a>
           <div class="my-auto">
             <img
               alt="unreal-captital"
-              class="-intro-x opacity-5 m-auto ml-20 lg:w-3/5 xl:w-4/5 xl:-ml-24 xl:-mt-12 globe__spin"
+              class="
+                -intro-x
+                opacity-5
+                m-auto
+                ml-20
+                lg:w-3/5
+                xl:w-4/5 xl:-ml-24 xl:-mt-12
+                globe__spin
+              "
               src="@/assets/images/uc/globe-removebg-preview.png"
             />
           </div>
@@ -32,19 +40,69 @@
             />
           </a>
           <div
-            class="overflow-y-scroll lg:overflow-hidden my-12 lg:my-auto mx-auto bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 md:w-2/4 xl:w-8/12 2xl:w-9/12"
+            class="
+              overflow-y-scroll
+              lg:overflow-hidden
+              my-12
+              lg:my-auto
+              mx-auto
+              bg-white
+              dark:bg-darkmode-600
+              xl:bg-transparent
+              px-5
+              sm:px-8
+              py-8
+              xl:p-0
+              rounded-md
+              shadow-md
+              xl:shadow-none
+              w-full
+              sm:w-3/4
+              md:w-2/4
+              xl:w-8/12
+              2xl:w-9/12
+            "
           >
             <h2
-              class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left pb-4"
+              class="
+                intro-x
+                font-bold
+                text-2xl
+                xl:text-3xl
+                text-center
+                xl:text-left
+                pb-4
+              "
             >
               Create a New Account
             </h2>
             <form @submit.prevent="onRegister" class="validate-form">
               <div
-                class="input-form relative rounded-lg my-5 h-16 appearance-none label-floating"
+                class="
+                  input-form
+                  relative
+                  rounded-lg
+                  my-5
+                  h-16
+                  appearance-none
+                  label-floating
+                "
               >
                 <input
-                  class="login__input bg-input h-14 form-control w-full py-2 px-4 text-sm 2xl:text-xl font-sans leading-normal rounded-lg"
+                  class="
+                    login__input
+                    bg-input
+                    h-14
+                    form-control
+                    w-full
+                    py-2
+                    px-4
+                    text-sm
+                    2xl:text-xl
+                    font-sans
+                    leading-normal
+                    rounded-lg
+                  "
                   id="name"
                   type="text"
                   placeholder="Enter your Name"
@@ -57,17 +115,49 @@
                 />
                 <label
                   name="name"
-                  class="form-label absolute block text-green-darker font-semibold font-sans w-full px-4 py-2 leading-normal label-float"
+                  class="
+                    form-label
+                    absolute
+                    block
+                    text-green-darker
+                    font-semibold font-sans
+                    w-full
+                    px-4
+                    py-2
+                    leading-normal
+                    label-float
+                  "
                   for="username"
                 >
                   Name
                 </label>
               </div>
               <div
-                class="input-form relative rounded-lg my-5 h-16 appearance-none label-floating"
+                class="
+                  input-form
+                  relative
+                  rounded-lg
+                  my-5
+                  h-16
+                  appearance-none
+                  label-floating
+                "
               >
                 <input
-                  class="login__input bg-input h-14 form-control w-full py-2 px-4 text-sm 2xl:text-xl font-sans leading-normal rounded-lg"
+                  class="
+                    login__input
+                    bg-input
+                    h-14
+                    form-control
+                    w-full
+                    py-2
+                    px-4
+                    text-sm
+                    2xl:text-xl
+                    font-sans
+                    leading-normal
+                    rounded-lg
+                  "
                   id="userName"
                   type="text"
                   placeholder="Enter your Username"
@@ -80,17 +170,51 @@
                 />
                 <label
                   name="name"
-                  class="form-label absolute block text-green-darker font-semibold font-sans w-full px-4 py-2 leading-normal label-float"
+                  class="
+                    form-label
+                    absolute
+                    block
+                    text-green-darker
+                    font-semibold font-sans
+                    w-full
+                    px-4
+                    py-2
+                    leading-normal
+                    label-float
+                  "
                   for="username"
                 >
                   Username
                 </label>
               </div>
               <div
-                class="input-form relative rounded-lg mt-5 mb-0 lg:my-5 h-16 appearance-none label-floating"
+                class="
+                  input-form
+                  relative
+                  rounded-lg
+                  mt-5
+                  mb-0
+                  lg:my-5
+                  h-16
+                  appearance-none
+                  label-floating
+                "
               >
                 <input
-                  class="login__input bg-input h-14 form-control w-full py-2 px-4 text-sm 2xl:text-xl font-sans leading-normal rounded-lg"
+                  class="
+                    login__input
+                    bg-input
+                    h-14
+                    form-control
+                    w-full
+                    py-2
+                    px-4
+                    text-sm
+                    2xl:text-xl
+                    font-sans
+                    leading-normal
+                    rounded-lg
+                  "
                   id="username"
                   type="email"
                   placeholder="Email"
@@ -103,7 +227,18 @@
                 />
                 <label
                   name="email"
-                  class="form-label absolute block text-green-darker font-semibold font-sans w-full px-4 py-2 leading-normal label-float"
+                  class="
+                    form-label
+                    absolute
+                    block
+                    text-green-darker
+                    font-semibold font-sans
+                    w-full
+                    px-4
+                    py-2
+                    leading-normal
+                    label-float
+                  "
                   for="username"
                 >
                   Email
@@ -112,11 +247,35 @@
               <div class="grid grid-cols-12 mt-0 lg:-mt-4 gap-4 lg:gap-x-4">
                 <div class="col-span-12 lg:col-span-6">
                   <div
-                    class="input-form relative rounded-lg mt-5 mb-0 lg:my-5 h-16 appearance-none label-floating"
+                    class="
+                      input-form
+                      relative
+                      rounded-lg
+                      mt-5
+                      mb-0
+                      lg:my-5
+                      h-16
+                      appearance-none
+                      label-floating
+                    "
                   >
                     <input
                       id="password"
-                      class="login__input bg-input h-14 form-control cursor-pointer w-full py-2 px-4 text-sm 2xl:text-xl font-sans leading-normal rounded-lg"
+                      class="
+                        login__input
+                        bg-input
+                        h-14
+                        form-control
+                        cursor-pointer
+                        w-full
+                        py-2
+                        px-4
+                        text-sm
+                        2xl:text-xl
+                        font-sans
+                        leading-normal
+                        rounded-lg
+                      "
                       type="password"
                       placeholder="Password"
                       minlength="8"
@@ -132,7 +291,18 @@
                     />
                     <label
                       name="password"
-                      class="form-label absolute block text-green-darker font-semibold font-sans w-full px-4 py-2 leading-normal label-float"
+                      class="
+                        form-label
+                        absolute
+                        block
+                        text-green-darker
+                        font-semibold font-sans
+                        w-full
+                        px-4
+                        py-2
+                        leading-normal
+                        label-float
+                      "
                       for="password"
                     >
                       Password
@@ -141,10 +311,34 @@
                 </div>
                 <div class="col-span-12 lg:col-span-6">
                   <div
-                    class="input-form relative rounded-lg mb-5 mt-0 lg:my-5 h-16 appearance-none label-floating"
+                    class="
+                      input-form
+                      relative
+                      rounded-lg
+                      mb-5
+                      mt-0
+                      lg:my-5
+                      h-16
+                      appearance-none
+                      label-floating
+                    "
                   >
                     <input
-                      class="login__input bg-input h-14 form-control cursor-pointer w-full py-2 px-4 text-sm 2xl:text-xl font-sans leading-normal rounded-lg"
+                      class="
+                        login__input
+                        bg-input
+                        h-14
+                        form-control
+                        cursor-pointer
+                        w-full
+                        py-2
+                        px-4
+                        text-sm
+                        2xl:text-xl
+                        font-sans
+                        leading-normal
+                        rounded-lg
+                      "
                       id="password_confirmation"
                       type="password"
                       placeholder="Confirm Password"
@@ -159,7 +353,18 @@
                     />
                     <label
                       name="password"
-                      class="form-label absolute block text-green-darker font-semibold font-sans w-full px-4 py-2 leading-normal label-float"
+                      class="
+                        form-label
+                        absolute
+                        block
+                        text-green-darker
+                        font-semibold font-sans
+                        w-full
+                        px-4
+                        py-2
+                        leading-normal
+                        label-float
+                      "
                       for="confirmPassword"
                     >
                       Confirm Password
@@ -168,14 +373,40 @@
                 </div>
               </div>
               <div
-                class="intro-x mt-5 xl:mt-8 text-center xl:text-left flex flex-col items-center justify-between lg:flex-row gap-4"
+                class="
+                  intro-x
+                  mt-5
+                  xl:mt-8
+                  text-center
+                  xl:text-left
+                  flex flex-col
+                  items-center
+                  justify-between
+                  lg:flex-row
+                  gap-4
+                "
               >
                 <div
-                  class="intro-x flex items-center text-slate-600 dark:text-slate-500 mt-4 text-xs sm:text-sm 2xl:text-base"
+                  class="
+                    intro-x
+                    flex
+                    items-center
+                    text-slate-600
+                    dark:text-slate-500
+                    mt-4
+                    text-xs
+                    sm:text-sm
+                    2xl:text-base
+                  "
                 >
                   <p class="cursor-pointer select-none">Already a Member?</p>
                   <router-link
-                    class="text-primary text-sm 2xl:text-base dark:text-slate-200 ml-1"
+                    class="
+                      text-primary text-sm
+                      2xl:text-base
+                      dark:text-slate-200
+                      ml-1
+                    "
                     to="/login"
                   >
                     login
@@ -184,7 +415,17 @@
                 <div>
                   <button
                     type="submit"
-                    class="btn btn-primary text-sm 2xl:text-base w-full py-3 px-8 rounded-full xl:mr-3 align-top"
+                    class="
+                      btn btn-primary
+                      text-sm
+                      2xl:text-base
+                      w-full
+                      py-3
+                      px-8
+                      rounded-full
+                      xl:mr-3
+                      align-top
+                    "
                   >
                     Register
                   </button>

@@ -1,16 +1,16 @@
 {
     "appTitle": "Node Project",
     "env": "staging",
-    "PORT": 8080,
+    "PORT": 3000,
     "baseUrl": "http://www.mukilselvam.com",
     "mongodb": {
-        "host": "mongodb://db/",
-        "uri": "mongodb://db/admin",
+        "host": "mongodb://localhost:27017/",
+        "uri": "mongodb://localhost:27017/un-real",
         "uri_test": "mongodb://localhost:27017/un-real",
-        "db_name": "admin",
+        "db_name": "un-real",
         "credentials": {
-            "username": "root",
-            "password": "mongo"
+            "username": "",
+            "password": ""
         },
         "enableMongoDebugging": false
     },
@@ -28,6 +28,6 @@
     },
     "hereMapApiKey": "",
     "JWT_KEY": "SecretKey123@"
-   
+
 
 }
