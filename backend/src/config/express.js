@@ -8,18 +8,24 @@ import winston from './winston';
 const path = require("path");
 const app = express();
 import * as expressPort from './expressPort';
-import { routes } from "./routes";
+import {
+    routes
+} from "./routes";
 
 
 // Setup Request Info Logging in Console with Morgan
 app.use(morganMiddleware.morganChalk);
 
 // parse application/json
-app.use(express.json({ limit: '4mb' }));
+app.use(express.json({
+    limit: '4mb'
+}));
 
 // parse application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
-app.use('public',express.static(path.resolve(__dirname, '../../uplods/')));
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use('public', express.static(path.resolve(__dirname, '../../uplods/')));
 
 require('./config')((err) => {
     if (err) {
@@ -46,6 +52,7 @@ require('./config')((err) => {
                 'http://localhost:4200',
                 'http://localhost:8080',
                 'http://159.89.192.6',
+                'http://34.207.122.216:8080'
             ];
             if (allowedOrigins.includes(req.header('Origin'))) {
                 corsOptions = {
@@ -84,7 +91,7 @@ require('./config')((err) => {
         // error handlers
         let errorHandler = require('./errorHandler');
         app.use(errorHandler.allErrorHandler);
- 
+
     }
 });
 
